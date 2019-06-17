@@ -2,9 +2,11 @@
 // Created by ezgi on 17.06.2019.
 //
 
-#include "GameState.h"
+#include <GameState.h>
 
-GameState :: GameState(){
+GameState :: GameState(sf::RenderWindow* window)
+    :State(window)
+{
 
 
 };
@@ -14,13 +16,17 @@ GameState :: ~GameState(){
 
 };
 
-
-void GameState::update(const float &dt){
+void GameState::endState(){
 
 
 }
 
-void GameState::render(sf::RenderTarget* target = nullptr){
+void GameState::update(const float &dt){
+
+    std::cout << "aaaaa" << std::endl;
+}
+
+void GameState::render(sf::RenderTarget* target){
 
 
 }

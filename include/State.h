@@ -29,7 +29,7 @@ private:
 
 public:
 
-    State(sf::RenderWindow* window;);
+    State(sf::RenderWindow* window);
     virtual ~State();
 
     // virtual void = 0 is a pure virtual function, classes inheriting from state class must contain these functions.

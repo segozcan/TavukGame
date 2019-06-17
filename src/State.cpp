@@ -2,7 +2,7 @@
 // Created by ezgi on 17.06.2019.
 //
 
-#include "State.h"
+#include <State.h>
 
 State::State(sf::RenderWindow* window) {
 

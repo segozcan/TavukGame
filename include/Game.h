@@ -5,7 +5,7 @@
 #ifndef TAVUK_GAME_H
 #define TAVUK_GAME_H
 
-#include "State.h"
+#include "GameState.h"
 
 
 class Game {

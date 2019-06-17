@@ -2,7 +2,7 @@
 // Created by ezgi on 17.06.2019.
 //
 
-#include "Game.h"
+#include <Game.h>
 
 //Static functions
 
@@ -35,7 +35,7 @@ void Game::initWindow() {
 
 void Game::initStates(){
 
-   // this->states.push(new)
+    this->states.push(new GameState(this->window));
 }
 
 //Constructors & Destructors
@@ -43,11 +43,19 @@ void Game::initStates(){
 Game::Game(){
 
         this->initWindow();
+        this->initStates();
 }
 
 Game::~Game() {
 
     delete this->window;
+
+    while(!this->states.empty()){
+
+        delete this->states.top(); // removes the data that the pointer is holding
+
+        this->states.pop(); // removes the pointer
+    }
 }
 
 //Functions
@@ -75,7 +83,7 @@ void Game::update() {
 
     if(!this->states.empty()){
 
-        this->states.top()->update();
+        this->states.top()->update(this->dt);
     }
 
 }
@@ -88,7 +96,7 @@ void Game::render() {
 
     if(!this->states.empty()){
 
-        this->states.top()->render();
+        this->states.top()->render(window);
     }
 
     this->window->display();

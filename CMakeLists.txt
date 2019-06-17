@@ -9,7 +9,7 @@ set(SFML_DIR "/home/rewieer/Libraries/SFML-2.5.1/lib/cmake/SFML")
 
 link_directories(SFML_LIBRARY_DIR)
 
-include_directories(SFML_INCLUDE_DIR Tavuk/include)
+include_directories(SFML_INCLUDE_DIR /home/ezgi/CLionProjects/Tavuk/include)
 
 find_package(SFML 2.5.1 COMPONENTS system window graphics network audio)
 
@@ -19,5 +19,5 @@ if(SFML_FOUND)
     message(STATUS "SFML_VERSION: ${SFML_VERSION}")
 endif()
 
-add_executable(Tavuk src/main.cpp src/Game.cpp src/Game.h src/State.cpp src/State.h src/States/GameState.cpp src/States/GameState.h)
+add_executable(Tavuk src/main.cpp src/Game.cpp  src/State.cpp  src/GameState.cpp )
 target_link_libraries (Tavuk sfml-graphics sfml-window sfml-system)
