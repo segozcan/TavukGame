@@ -19,5 +19,5 @@ if(SFML_FOUND)
     message(STATUS "SFML_VERSION: ${SFML_VERSION}")
 endif()
 
-add_executable(Tavuk src/main.cpp src/Game.cpp  src/State.cpp  src/GameState.cpp )
+add_executable(Tavuk src/main.cpp src/Game.cpp  src/State.cpp  src/GameState.cpp src/Entity.cpp )
 target_link_libraries (Tavuk sfml-graphics sfml-window sfml-system)

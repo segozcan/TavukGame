@@ -5,20 +5,7 @@
 #ifndef TAVUK_STATE_H
 #define TAVUK_STATE_H
 
-
-#include <iostream>
-#include <ctime>
-#include <fstream>
-#include <sstream>
-#include <stack>
-#include <map>
-#include <stdlib.h>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-#include <SFML/Audio.hpp>
-#include <SFML/Network.hpp>
-#include <vector>
+#include <Entity.h>
 
 class State {
 
@@ -26,6 +13,7 @@ private:
 
     sf::RenderWindow* window;
     std::vector<sf::Texture*> textures;
+    bool quit;
 
 public:
 
@@ -34,7 +22,11 @@ public:
 
     // virtual void = 0 is a pure virtual function, classes inheriting from state class must contain these functions.
 
+    const bool& getQuit() const;
+
+    virtual void checkForQuit();
     virtual void endState() = 0;
+    virtual void updateKeybinds(const float&dt) = 0;
     virtual void update(const float &dt) = 0;
     virtual void render(sf::RenderTarget* target = nullptr) = 0;
 

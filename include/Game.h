@@ -37,10 +37,15 @@ public:
     virtual ~Game();
 
     //Functions
+
+    void endApp();
+
     void updateDt();
     void updateSFMLEvents();
     void update();
+
     void render();
+
     void run();
 
 

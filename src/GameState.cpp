@@ -16,17 +16,26 @@ GameState :: ~GameState(){
 
 };
 
-void GameState::endState(){
+void GameState::endState() {
 
 
+    std::cout << "Ending" << std::endl;
+}
+
+
+void GameState::updateKeybinds(const float &){
+
+    this->checkForQuit();
 }
 
 void GameState::update(const float &dt){
 
-    std::cout << "aaaaa" << std::endl;
+    this->updateKeybinds(dt);
+    this->player.update(dt);
 }
 
 void GameState::render(sf::RenderTarget* target){
 
-
+    this->player.render(target);
 }
+
