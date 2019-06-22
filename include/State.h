@@ -11,6 +11,8 @@ class State {
 
 private:
 
+protected:
+
     sf::RenderWindow* window;
     std::vector<sf::Texture*> textures;
     bool quit;
@@ -25,6 +27,7 @@ public:
     const bool& getQuit() const;
 
     virtual void checkForQuit();
+
     virtual void endState() = 0;
     virtual void updateKeybinds(const float&dt) = 0;
     virtual void update(const float &dt) = 0;
